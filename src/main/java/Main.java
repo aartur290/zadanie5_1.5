@@ -12,6 +12,8 @@ class Main {
         System.out.println("1. Add student");
         System.out.println("2. Show students");
         System.out.println("3. Delete student");
+        System.out.println("4. Export students");
+        System.out.println("5. Import students");
         System.out.println("0. Exit");
         System.out.println("----------");
         System.out.print("Choose: ");
@@ -51,6 +53,18 @@ class Main {
             System.out.print("Enter last name: ");
             lastName = scanner.next();
             s.deleteStudent(name, lastName);
+            System.out.println("----------");
+            break;
+          case 4:
+            System.out.println("----------");
+            System.out.println("Exporting students");
+            s.Export();
+            System.out.println("----------");
+            break;
+          case 5:
+            System.out.println("----------");
+            System.out.println("Importing students");
+            s.Import();
             System.out.println("----------");
             break;
           case 0:

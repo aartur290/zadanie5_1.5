@@ -50,6 +50,34 @@ public class Service {
     bw.close();
   }
 
+  public void Export() throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader("db.txt"));
+    BufferedWriter writer = new BufferedWriter(new FileWriter("backup.txt"));
+
+    String line = "";
+    while ((line = reader.readLine()) != null) {
+      writer.write(line);
+      writer.newLine();
+    }
+    reader.close();
+    writer.close();
+
+  }
+
+  public void Import() throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader("backup.txt"));
+    BufferedWriter writer = new BufferedWriter(new FileWriter("db.txt"));
+
+    String line = "";
+    while ((line = reader.readLine()) != null) {
+      writer.write(line);
+      writer.newLine();
+    }
+    reader.close();
+    writer.close();
+
+  }
+
   public Student findStudentByName(String name) {
     return null;
   }
