@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 
 public class Service {
 
@@ -78,7 +79,9 @@ public class Service {
 
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+  public Collection<Student> StudentOrder(Collection<Student> students) {
+    ArrayList<Student> list = new ArrayList<Student>(students);
+    Collections.sort(list, new StudentOrder());
+    return list;
   }
 }

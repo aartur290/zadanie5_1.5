@@ -1,7 +1,9 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Collections;
 
 class Main {
+
   public static void main(String[] args) {
     try {
       Service s = new Service();
@@ -14,6 +16,7 @@ class Main {
         System.out.println("3. Delete student");
         System.out.println("4. Export students");
         System.out.println("5. Import students");
+        System.out.println("6. Sort students");
         System.out.println("0. Exit");
         System.out.println("----------");
         System.out.print("Choose: ");
@@ -63,8 +66,18 @@ class Main {
             break;
           case 5:
             System.out.println("----------");
-            System.out.println("Importing students");
+            System.out.println("Importing students by last name");
             s.Import();
+            System.out.println("----------");
+            break;
+          case 6:
+            System.out.println("----------");
+            System.out.println("Sorting students by last name");
+            System.out.println("----------");
+            students = s.getStudents();
+            var sorted = s.StudentOrder(students);
+            for (Student current : sorted)
+              System.out.println(current.ToString());
             System.out.println("----------");
             break;
           case 0:
