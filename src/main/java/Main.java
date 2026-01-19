@@ -17,6 +17,7 @@ class Main {
         System.out.println("4. Export students");
         System.out.println("5. Import students");
         System.out.println("6. Sort students");
+        System.out.println("7. Delete student by Name and Age");
         System.out.println("0. Exit");
         System.out.println("----------");
         System.out.print("Choose: ");
@@ -78,6 +79,16 @@ class Main {
             var sorted = s.StudentOrder(students);
             for (Student current : sorted)
               System.out.println(current.ToString());
+            System.out.println("----------");
+            break;
+          case 7:
+            System.out.println("----------");
+            System.out.print("Enter name: ");
+            name = scanner.next();
+            System.out.print("Enter  age: ");
+            age = Integer.parseInt(scanner.nextLine());
+            s.deleteStudent(name, age);
+            System.out.print(name + " " + age);
             System.out.println("----------");
             break;
           case 0:

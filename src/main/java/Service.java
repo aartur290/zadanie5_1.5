@@ -51,6 +51,10 @@ public class Service {
     bw.close();
   }
 
+  public void deleteStudent(String name, int age) throws IOException {
+
+  }
+
   public void Export() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader("db.txt"));
     BufferedWriter writer = new BufferedWriter(new FileWriter("backup.txt"));
