@@ -51,8 +51,24 @@ public class Service {
     bw.close();
   }
 
-  public void deleteStudent(String name, int age) throws IOException {
+  public void deleteStudentNameAge(String name, int age) throws IOException {
+    boolean flag = true;
+    System.out.println("----------");
+    System.out.println("Deleting student: " + name + " " + age);
+    var student = getStudents();
 
+    BufferedWriter bw = new BufferedWriter(new FileWriter("db.txt"));
+    for (Student current : student) {
+      if (!(current.GetName().equals(name) && current.GetAge() == age)) {
+        bw.write(current.ToString());
+        bw.newLine();
+      } else
+        flag = false;
+    }
+
+    if (flag)
+      System.out.println("Student not found");
+    bw.close();
   }
 
   public void Export() throws IOException {

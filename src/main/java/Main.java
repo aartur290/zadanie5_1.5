@@ -67,7 +67,7 @@ class Main {
             break;
           case 5:
             System.out.println("----------");
-            System.out.println("Importing students by last name");
+            System.out.println("Importing students");
             s.Import();
             System.out.println("----------");
             break;
@@ -85,10 +85,9 @@ class Main {
             System.out.println("----------");
             System.out.print("Enter name: ");
             name = scanner.next();
-            System.out.print("Enter  age: ");
-            age = Integer.parseInt(scanner.nextLine());
-            s.deleteStudent(name, age);
-            System.out.print(name + " " + age);
+            System.out.print("Enter age: ");
+            age = scanner.nextInt();
+            s.deleteStudentNameAge(name, age);
             System.out.println("----------");
             break;
           case 0:
